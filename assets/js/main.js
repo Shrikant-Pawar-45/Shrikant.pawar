@@ -5,7 +5,6 @@ function darkmode() {
     localStorage.setItem('darkmode', !wasDarkmode);
     const element = document.body;
     element.classList.toggle('Dark-mode', !wasDarkmode);
-    var x = document.getElementById(icon);
 
 }
 function onload() {
