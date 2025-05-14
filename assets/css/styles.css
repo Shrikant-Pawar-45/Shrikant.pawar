@@ -172,6 +172,7 @@ img {
     right: -100%;
     width: 80%;
     height: 100%;
+    color:var(--second-color);
     padding: 2rem;
     background-color: var(--black-color);
     transition: 0.5s;
@@ -183,7 +184,7 @@ img {
 }
 .nav__link {
   position: relative;
-  color: #fff;
+  color: var(--second-color);
 }
 .nav__link:hover {
   position: relative;
@@ -200,7 +201,12 @@ img {
 .nav__logo {
   color: var(--second-color);
 }
-.nav__toggle,.nav__toggle1{
+.nav__toggle{
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.nav__toggle1{
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
