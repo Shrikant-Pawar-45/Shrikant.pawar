@@ -2,12 +2,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 /*===== VARIABLES CSS =====*/
+::-webkit-scrollbar-thumb {
+  background-color: var(--first-color);
+  border-radius: 20px;
+  border: 3px solid var(--scrollbar-color);
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-color);
+}
 :root {
   --header-height: 3rem;
+  --header-height-2: 1rem;
   --font-semi: 600;
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
+  --scrollbar-color: #100f0f;
+  --login-color: blueviolet;
   --hue-color: 260;
   --red-color: 355;
   --black-color: #000;
@@ -23,6 +37,7 @@
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
   /*===== Margenes =====*/
+  --mb-1: 0.5rem;
   --mb-2: 1rem;
   --mb-4: 2rem;
   --mb-5: 2.5rem;
@@ -30,6 +45,17 @@
   /*===== z index =====*/
   --z-back: -10;
   --z-fixed: 100;
+}
+.Dark-mode{
+    --scrollbar-color: #ffffff;
+    --hue-color: 260;
+    --red-color: 355;
+    --black-color: #ffffff;
+    --header-color: #ffffff;
+    --lite-black-color: #cfcfcf;
+    --first-color: hsl(var(--hue-color), 89%, 60%);
+    --third-color: hsl(var(--red-color), 89%, 60%);
+    --second-color: hsl(var(--hue-color), 0%, 0%);
 }
 @media screen and (min-width: 968px) {
   :root {
@@ -55,7 +81,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-  background-color: black;
+  background-color: var(--black-color);
 }
 
 h1, h2, p {
@@ -137,6 +163,9 @@ img {
     height: 2rem;
     width: 2rem;
     }
+    .nav__toggle1{
+        display: none;
+    }
   .nav__menu {
     position: fixed;
     top: var(--header-height);
@@ -147,6 +176,7 @@ img {
     background-color: var(--black-color);
     transition: 0.5s;
   }
+
 }
 .nav__item {
   margin-bottom: var(--mb-4);
@@ -170,7 +200,7 @@ img {
 .nav__logo {
   color: var(--second-color);
 }
-.nav__toggle {
+.nav__toggle,.nav__toggle1{
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
@@ -186,7 +216,16 @@ img {
   top: 2rem;
   background-color: var(--first-color);
 }
-
+/* ====== Header 2 ======*/
+.l-header2 {
+  width: 100%;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color:var(--header-color);
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
 /*=== Show menu ===*/
 .show {
   right: 0;
@@ -365,6 +404,41 @@ img {
 .skills__nodejs{
   width: 65%;
 }
+/*===== Education =======*/
+.education__container {
+  row-gap: 2rem;
+}
+.education__subtitle {
+  margin-bottom: var(--mb-2);
+}
+.education__data {
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: var(--mb-4);
+}
+.education__data2{
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--mb-4);
+}
+.education__panel {
+  display: inline-block;
+ row-gap: 1.5rem;
+}
+.education__panel1\.1,.education__panel1\.2{
+  display: inline-flex;
+}
+.education__img {
+  width: 120px;
+  height: 120px;
+
+  margin-right: var(--mb-2);
+  /*background-color: white;*/
+}
+.education__img img{
+  border-radius: 10%;
+  background-color: white;
+}
 
 /* ===== WORK =====*/
 .work__container,.Certificate-container{
@@ -399,7 +473,7 @@ img {
 /* ===== CONTACT =====*/
 .contact__input {
   width: 100%;
-  background-color: black;
+  background-color: var(--black-color);
   color: var(--second-color);
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
@@ -409,6 +483,10 @@ img {
   outline: none;
   margin-bottom: var(--mb-4);
 }
+.contact__title {
+  margin-bottom: var(--mb-2);
+}
+
 .contact__button {
   display: block;
   border: none;
@@ -421,7 +499,7 @@ img {
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--lite-black-color);
-  color: #fff;
+  color: var(--second-color);
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
@@ -438,7 +516,7 @@ img {
 }
 .footer__icon {
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--second-color);
   margin: 0 var(--mb-2);
 }
 .footer__copy {

@@ -1,5 +1,18 @@
 
 /*===== MENU SHOW =====*/
+function darkmode() {
+    const wasDarkmode = localStorage.getItem('darkmode') === 'true';
+    localStorage.setItem('darkmode', !wasDarkmode);
+    const element = document.body;
+    element.classList.toggle('Dark-mode', !wasDarkmode);
+    var x = document.getElementById(icon);
+
+}
+function onload() {
+    document.body.classList.toggle('Dark-mode', localStorage.getItem('darkmode') === 'true');
+}
+
+
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
@@ -10,6 +23,7 @@ const showMenu = (toggleId, navId) =>{
         })
     }
 }
+
 showMenu('nav-toggle','nav-menu')
 
 /*==================== REMOVE MENU MOBILE ====================*/
@@ -52,7 +66,8 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img ',{delay: 400});
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400});
 sr.reveal('.home__social-icon',{ interval: 200});
-sr.reveal('.skills__data, .work__img,.Project__title, .Project__Des,.contact__input',{interval: 200});
+sr.reveal('.skills__data, .education__img, .education__data,.work__img,.Project__title, .Project__Des,.contact__input',{interval: 200});
+
