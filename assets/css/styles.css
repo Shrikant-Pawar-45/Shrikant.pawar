@@ -312,6 +312,9 @@ img {
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
 }
+.ab2{
+  margin-top: var(--mb-2);
+}
 
 /* ===== ABOUT =====*/
 .about__container {
